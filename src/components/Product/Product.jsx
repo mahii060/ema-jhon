@@ -1,12 +1,17 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import './Product.css'
 
 const Product = (props) => {
-    console.log(props.product)
+    // console.log(props.product)
     // eslint-disable-next-line react/prop-types
-    const { name, id, price, quantity, img, seller, ratings } = props.product
+    const { name, id, price, quantity, img, seller, ratings } = props.product;
+
+    const addToCart = props.addToCart;
+
     return (
         <div className='product'>
             <img src={img} alt="" />
@@ -16,7 +21,7 @@ const Product = (props) => {
                 <p>Manufacturer: {seller}</p>
                 <p>Ratings: {ratings} star</p>
             </div>
-            <button className='btn-cart'>Add to Cart</button>
+            <button onClick={() => addToCart(props.product)} className='btn-cart'>Add to Cart {<FontAwesomeIcon icon={faShoppingCart} />}</button>
         </div>
     );
 };
