@@ -10,6 +10,10 @@
     margin: 0px;
 }
 
+.product-price {
+    font-weight: 600;
+}
+
 .product img {
     width: 286px;
     height: 286px;
